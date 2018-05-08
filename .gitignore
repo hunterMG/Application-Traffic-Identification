@@ -1,3 +1,6 @@
+# datasets
+*.npy
+
 # vscode settings
 settings.json
 
