@@ -27,10 +27,13 @@ def analyze():
         pcaps = rdpcap(file)
         print(i, ": ", len(pcaps))
     """
-    pcapFile_weibo = "../data/weibo_http_request.pcap"
-    pcapFile_zhihu = "../data/zhihu/zhihu_req.pcap"
-    packets = scapy.rdpcap(pcapFile_zhihu)
-    output_txt = open('./zhihu.txt', 'w')    
+    pcapFile_weibo = "../data/weibo_req1.pcap"
+    pcapFile_huafen = "../data/huafen_req1.pcap"
+    pcapFile_jianshu = "../data/jianshu_req1.pcap"
+    pcapFile_tieba = "../data/tieba_req1.pcap"
+    pcapFile_zhihu = "../data/zhihu_req1.pcap"
+    packets = scapy.rdpcap(pcapFile_huafen)
+    output_txt = open('./huafen.txt', 'w')    
     print("pcapFile has", len(packets), "packets.")
     packet = packets[0]
     # print(packet.time)
@@ -101,6 +104,7 @@ def analyze():
             tmp = str(bytes(http_payload), encoding='utf-8')
             for c in tmp:
                 char_summary.add(c)
+            tmp = tmp[:230] + '\n\n'
             output_txt.write(tmp)
         except UnicodeDecodeError:
             print('Error when decode packet : ', i)
