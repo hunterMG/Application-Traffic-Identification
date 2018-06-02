@@ -1,27 +1,24 @@
 [[source]]
-
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
-
 "scapy-python3" = "*"
 scapy-http = "*"
 pyx = "*"
 matplotlib = "*"
 keras = "*"
 sklearn = "*"
-
+flask = "*"
+"jinja2" = "*"
+livelossplot = "*"
+pydot = "*"
 
 [dev-packages]
-
 pylint = "*"
 jupyter = "*"
 rope = "*"
 
-
 [requires]
-
 python_version = "3.6"
