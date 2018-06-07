@@ -28,9 +28,12 @@ def analyze():
         print(i, ": ", len(pcaps))
     """
     pcapFile_weibo = "../data/weibo_http_request.pcap"
+    pcapFile_huafen = "../data/huafen_req.pcap"
+    pcapFile_jianshu = "../data/jianshu_req.pcap"
+    pcapFile_tieba = "../data/tieba_req.pcap"
     pcapFile_zhihu = "../data/zhihu/zhihu_req.pcap"
-    packets = scapy.rdpcap(pcapFile_zhihu)
-    output_txt = open('./zhihu.txt', 'w')    
+    packets = scapy.rdpcap(pcapFile_jianshu)
+    output_txt = open('./jianshu.txt', 'w')    
     print("pcapFile has", len(packets), "packets.")
     packet = packets[0]
     # print(packet.time)

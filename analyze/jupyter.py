@@ -84,3 +84,18 @@ str = 'qwer'
 s1 = set()
 s1.add([c for i,c in enumerate(str)])
 print(s1)
+
+#%%
+a = {1,2,3}
+b = {4}
+c = {5}
+d = a|b|c
+d
+
+#%%
+import numpy as np
+a = np.array([[1,2],[3,4]])
+print(type(a))
+print(a*2)
+c = np.ones(3)
+print(c*2)
