@@ -83,10 +83,10 @@ def http_header(packet):
         X_test = preprocess(http_payload)
         X_test = X_test.reshape(-1, 1, 230, 90)
         # predict
-        res_array = model.predict(X_test, verbose=1)
-        print(res_array)
+        res_array = model.predict(X_test, verbose=0)
+        # print(res_array)
         res = np.argmax(res_array, 1)
-        print(res)
+        # print(res)
         if res == 0:
             print("分类结果： 微博")
         elif res == 1:
@@ -114,5 +114,5 @@ def HTTP_print(packet1):
 if __name__ == "__main__":
     # env_fix()
     model = load_model('my_model1.h5')
+    print('\n开始监听流量：')
     scapy.sniff(iface='wlp3s0', prn=http_header, filter="dst port 80", count=0)
-    print('开始监听流量：')
